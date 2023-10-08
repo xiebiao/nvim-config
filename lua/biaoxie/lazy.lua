@@ -17,16 +17,23 @@ require("lazy").setup({
         "nvim-lua/plenary.nvim",
         "navarasu/onedark.nvim",
         {
-        lazy = false,
-        'nvim-telescope/telescope.nvim', tag = '0.1.3',
-        -- or                              , branch = '0.1.x',
-        dependencies = { 'nvim-lua/plenary.nvim' },
-        {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
+                lazy = false,
+                'nvim-telescope/telescope.nvim', tag = '0.1.3',
+                -- or                              , branch = '0.1.x',
+                dependencies = { 'nvim-lua/plenary.nvim' },
+                {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
+        },
+        {
+               'nvim-lualine/lualine.nvim',
+                require = { 'nvim-tree/nvim-web-devicons', opt = true }
         }
-    
 })
 -- lazy.nvim END
-
+-- lualine.nvim
+require('lualine').setup({
+options = { icons_enabled = false,theme = 'gruvbox' }
+})
+-- lualine.nvim END
 -- nvim-tree
 require("nvim-tree").setup({
 renderer = {
@@ -42,7 +49,7 @@ renderer = {
 -- nvim-tree END
 -- theme onedark
 require('onedark').setup {
- style='cool',
+ style='deep',
  term_colors = true,
 }
 require('onedark').load()
