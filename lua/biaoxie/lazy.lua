@@ -1,3 +1,4 @@
+-- nvim 插件管理工具lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -12,9 +13,19 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-"nvim-tree/nvim-tree.lua",
-"navarasu/onedark.nvim",
+        "nvim-tree/nvim-tree.lua",
+        "nvim-lua/plenary.nvim",
+        "navarasu/onedark.nvim",
+        {
+        lazy = false,
+        'nvim-telescope/telescope.nvim', tag = '0.1.3',
+        -- or                              , branch = '0.1.x',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
+        }
+    
 })
+-- lazy.nvim END
 
 -- nvim-tree
 require("nvim-tree").setup({
@@ -28,9 +39,11 @@ renderer = {
   }
  }
 })
--- theme
-require("onedark").setup {
- style='dark',
+-- nvim-tree END
+-- theme onedark
+require('onedark').setup {
+ style='cool',
  term_colors = true,
 }
 require('onedark').load()
+-- theme onedark END
