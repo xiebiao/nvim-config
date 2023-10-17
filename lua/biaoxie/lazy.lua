@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
         "nvim-tree/nvim-tree.lua",
         "nvim-lua/plenary.nvim",
-        "navarasu/onedark.nvim",
+--        "navarasu/onedark.nvim",
         {
                 lazy = false,
                 'nvim-telescope/telescope.nvim', tag = '0.1.3',
@@ -26,14 +26,15 @@ require("lazy").setup({
         {
                'nvim-lualine/lualine.nvim',
                 require = { 'nvim-tree/nvim-web-devicons', opt = true }
-        }
+        },
+        { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = {}}
 })
--- lazy.nvim END
+---------------------------------------- lazy.nvim END
 -- lualine.nvim
 require('lualine').setup({
 options = { icons_enabled = false,theme = 'gruvbox' }
 })
--- lualine.nvim END
+---------------------------------------- lualine.nvim END
 -- nvim-tree
 require("nvim-tree").setup({
 renderer = {
@@ -46,11 +47,16 @@ renderer = {
   }
  }
 })
--- nvim-tree END
+---------------------------------------- nvim-tree END
 -- theme onedark
-require('onedark').setup {
- style='deep',
- term_colors = true,
-}
-require('onedark').load()
--- theme onedark END
+--require('onedark').setup {
+-- style='deep',
+-- term_colors = true,
+--}
+--require('onedark').load()
+---------------------------------------- theme onedark END
+-- theme gruvbox
+vim.o.background = "dark" -- "dark" or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
+---------------------------------------- theme gruvbox END
+

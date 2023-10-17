@@ -7,6 +7,13 @@ opt.clipboard = 'unnamedplus' -- 和外界共享粘贴板内容
 opt.cursorline = true
 opt.cursorcolumn = true
 opt.number = true
+
+--opt.textwidth = 80    -- 设置70个字符就自动换行
+opt.softtabstop = 2 -- 统一缩进为4
+opt.smartindent = true
+opt.expandtab = true
+opt.shiftwidth = 2 -- "设置缩进的空格数为4
+
 opt.laststatus = 3
 opt.termguicolors = true
 opt.ignorecase = true -- 搜索忽略大小写
