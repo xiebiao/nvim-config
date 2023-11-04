@@ -27,7 +27,18 @@ require("lazy").setup({
                'nvim-lualine/lualine.nvim',
                 require = { 'nvim-tree/nvim-web-devicons', opt = true }
         },
-        { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = {}}
+        { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = {}
+        },
+        {
+          "kylechui/nvim-surround",
+          -- version = "*", -- Use for stability; omit to use `main` branch for the latest features
+          event = "VeryLazy",
+          config = function()
+              require("nvim-surround").setup({
+                  -- Configuration here, or leave empty to use defaults
+              })
+          end
+       }
 })
 ---------------------------------------- lazy.nvim END
 -- lualine.nvim
