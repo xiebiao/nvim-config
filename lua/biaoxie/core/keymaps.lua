@@ -28,6 +28,8 @@ vim.api.nvim_create_autocmd(
   {"CursorMoved"},
   {
     callback = function()
+      -- TODO 最好的实现方案是获取当前环境屏幕的宽度和高度，
+      -- 再根据百分比计算出当前聚焦窗口的高度和宽度
       vim.fn.execute(":vert res 85")
     end
   } 
