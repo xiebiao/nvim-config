@@ -15,6 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
         "nvim-tree/nvim-tree.lua",
         "nvim-lua/plenary.nvim",
+        -- theme
+        { "catppuccin/nvim", name = "catppuccin", priority = 1000 }, 
 --        "navarasu/onedark.nvim",
         {
                 lazy = false,
@@ -43,7 +45,7 @@ require("lazy").setup({
 ---------------------------------------- lazy.nvim END
 -- lualine.nvim
 require('lualine').setup({
-options = { icons_enabled = false,theme = 'gruvbox' }
+options = { icons_enabled = false}
 })
 ---------------------------------------- lualine.nvim END
 -- nvim-tree
@@ -67,7 +69,11 @@ renderer = {
 --require('onedark').load()
 ---------------------------------------- theme onedark END
 -- theme gruvbox
+-- vim.o.background = "dark" -- "dark" or "light" for light mode
+-- vim.cmd([[colorscheme gruvbox]])
+---------------------------------------- theme gruvbox END
+-- thme catppuccin
 vim.o.background = "dark" -- "dark" or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme catppuccin]])
 ---------------------------------------- theme gruvbox END
 
