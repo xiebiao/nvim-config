@@ -23,6 +23,14 @@ keymap('n','<C-k>','<C-w>k',opts)
 keymap('n','<C-h>','<C-w>h',opts)
 keymap('n','<C-l>','<C-w>l',opts)
 
+-- 窗口大小改变
+-- 由于macOS中的ctrl键功能冲突，所有使用alt键
+
+keymap('n','<A-Up>',':resize -2<CR>',opts)
+keymap('n','<A-Down>',':resize +2<CR>',opts)
+keymap('n','<A-Left>',':vertical resize -2<CR>',opts)
+keymap('n','<A-Right>',':vertical resize +2<CR>',opts)
+
 -- 垂直窗口聚焦时，自动调整窗口宽度为85，在多窗口下非常有用
 vim.api.nvim_create_autocmd(
   {"CursorMoved"},

@@ -69,11 +69,11 @@ renderer = {
 --require('onedark').load()
 ---------------------------------------- theme onedark END
 -- theme gruvbox
--- vim.o.background = "dark" -- "dark" or "light" for light mode
+-- vim.o.background = "light" -- "dark" or "light" for light mode
 -- vim.cmd([[colorscheme gruvbox]])
 ---------------------------------------- theme gruvbox END
--- thme catppuccin
-vim.o.background = "dark" -- "dark" or "light" for light mode
-vim.cmd([[colorscheme catppuccin]])
+-- theme catppuccin
+-- catppuccin-latte (light), catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+vim.cmd([[colorscheme catppuccin-frappe]])
 ---------------------------------------- theme gruvbox END
 
