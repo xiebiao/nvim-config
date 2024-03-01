@@ -13,23 +13,23 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-        "nvim-tree/nvim-tree.lua",
-        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-tree.lua", -- 目录文件插件
+        "nvim-lua/plenary.nvim", -- 基于nvim封装的一些工具API
         -- theme
         { "catppuccin/nvim", name = "catppuccin", priority = 1000 }, 
 --        "navarasu/onedark.nvim",
         {
                 lazy = false,
-                'nvim-telescope/telescope.nvim', tag = '0.1.3',
+                'nvim-telescope/telescope.nvim', tag = '0.1.3', -- 搜索插件
                 -- or                              , branch = '0.1.x',
                 dependencies = { 'nvim-lua/plenary.nvim' },
-                {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
+                {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"} -- 源文件解析器，解析各种编程语言
         },
         {
-               'nvim-lualine/lualine.nvim',
+               'nvim-lualine/lualine.nvim', -- nvim状态栏配置
                 require = { 'nvim-tree/nvim-web-devicons', opt = true }
         },
-        { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = {}
+        { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = {} -- nvim高亮配置
         },
         {
           "kylechui/nvim-surround",

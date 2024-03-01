@@ -1,6 +1,7 @@
 local opts = { noremap = true, silent = true}
 local keymap = vim.api.nvim_set_keymap
--- 设置主键为空格键
+
+-- 设置Leader主键
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
 
@@ -45,9 +46,9 @@ vim.api.nvim_create_autocmd(
   } 
 )
 
--- nvim-tree
+-- 插件：nvim-tree
 keymap('n','<leader>d',':NvimTreeToggle <CR>',opts)
--- telescope.nvim
+-- 插件: telescope.nvim
 keymap('n',"<leader>ff",'<Cmd>Telescope find_files<CR>',opts)
 keymap('n',"<leader>fg",'<Cmd>Telescope live_grep<CR>',opts)
 keymap('n',"<leader>fb",'<Cmd>Telescope live_buffers<CR>',opts)
