@@ -10,6 +10,11 @@ vim.g.maplocalleader = " "
 
 keymap('n','<leader>w',':w!<ESC>',opts) --normal模式下快捷保存文件 
 
+-- save
+keymap('n','<C-s>',':update<CR>',opts)
+keymap('v','<C-s>','<C-C>:update<CR>',opts)
+keymap('i','<C-s>','<C-O>:update<CR>',opts)
+
 -- normal,visual模式下向上/向下移动内容
 keymap('n','<S-Down>','mz:m+<cr>`z',opts)
 keymap('n','<S-Up>','mz:m-2<cr>`z',opts)
